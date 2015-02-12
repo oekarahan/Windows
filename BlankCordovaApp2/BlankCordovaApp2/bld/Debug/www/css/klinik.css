@@ -1,0 +1,91 @@
+﻿@charset "utf-8";
+
+
+
+
+/*
+body{
+    background-image:url(home.png);
+    background-repeat: no-repeat;
+
+   
+}*/
+
+
+
+.navii{
+    left:0px;
+    top: 0px;
+    list-style: none;
+    position:absolute;
+    background-color:#1a4064;
+    width: 768px;
+    height: 107px
+  
+}
+
+
+.navi{
+
+
+    background-color:#1a4064;
+}
+
+
+
+.navii li{
+
+    display:inline;
+    background-color:#1a4064;
+    top:10px !important;
+}
+ 
+
+#azurück{
+
+    top:10px !important;
+    background-color:#1a4064;
+}
+
+
+
+
+
+#lupe{
+
+  position: relative;
+ bottom: 10px !important;
+ background-color:#1a4064;
+}
+
+
+#zurück img:hover{
+    opacity:0.4;
+
+}
+
+
+
+#leistungen img:hover{
+    opacity:0.4;
+
+}
+
+#scan img:hover{
+    opacity:0.4;
+
+}
+
+#inputfeld img:hover{
+    opacity: 0.4;
+
+}
+
+
+
+#inhalt{
+
+    position:absolute;
+    top: 120px !important;
+
+}
