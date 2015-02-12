@@ -1,4 +1,4 @@
-( function( $, undefined ) {
+﻿( function( $, undefined ) {
 
 // Eventually, the real handleLink function should pass the coordinates and
 // size of the rectangle representing the origin into popup's "open" method, or

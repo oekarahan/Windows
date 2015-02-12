@@ -1,4 +1,4 @@
-$.mobile.document.on( "pagecreate", "#demo-page", function(){
+﻿$.mobile.document.on( "pagecreate", "#demo-page", function(){
 	var head = $( ".ui-page-active [data-role='header']" );
 
 	$.mobile.document.on( "click", "#sorter li", function() {

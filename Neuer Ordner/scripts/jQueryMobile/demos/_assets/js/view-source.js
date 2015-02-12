@@ -1,4 +1,4 @@
-// View demo source code
+﻿// View demo source code
 
 function attachPopupHandler( popup, sources ) {
 	popup.one( "popupbeforeposition", function() {

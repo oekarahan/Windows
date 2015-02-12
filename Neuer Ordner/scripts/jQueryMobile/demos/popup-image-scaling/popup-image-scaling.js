@@ -1,4 +1,4 @@
-$( document ).on( "pagecreate", function() {
+﻿$( document ).on( "pagecreate", function() {
 	$( ".photopopup" ).on({
 		popupbeforeposition: function() {
 			var maxHeight = $( window ).height() - 60 + "px";

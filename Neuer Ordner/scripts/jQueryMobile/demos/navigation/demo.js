@@ -1,4 +1,4 @@
-(function( $ ) {
+﻿(function( $ ) {
   // On document ready
   $(function() {
 

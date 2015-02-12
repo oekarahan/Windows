@@ -5,85 +5,9 @@
   <author href="http://cordova.io" email="dev@cordova.apache.org">Apache Cordova Team </author>
   <content src="index.html" />
   <access origin="*" />
-  
-<feature name="http://api.phonegap.com/1.0/device" />
-<preference name="windows-target-version" value="8.0" />
-<preference name="windows-phone-target-version" value="8.1" />
-<preference name="permissions" value="none"/>
-<preference name="phonegap-version" value="3.3.0" />
-<preference name="orientation" value="portrait" />
-<preference name="target-device" value="universal" />
-<preference name="fullscreen" value="false" />
-<preference name="prerendered-icon" value="true" />
-<preference name="ios-statusbarstyle" value="black-opaque" />
-<preference name="detect-data-types" value="true" />
-<preference name="exit-on-suspend" value="false" />
-<preference name="auto-hide-splash-screen" value="true" />
-<preference name="disable-cursor" value="false" />
-<preference name="android-minSdkVersion" value="8" />
-<preference name="android-installLocation" value="auto" />
-<preference name="BackgroundColor" value="0xffffffff" />
-<preference name="webviewbounce" value="false" />
-<preference name="stay-in-webview" value="false" />
-<preference name="show-splash-screen-spinner" value="false" />
-<preference name="splash-screen-duration" value="0" />
-<preference name="KeepRunning" value="true" />
-<preference name="AndroidLaunchMode" value="singleTop" />
-<!--<preference name="LoadingDialog" value=""/> -->
-<!-- Preferences for iOS -->
-<preference name="AllowInlineMediaPlayback" value="false" />
-<preference name="AutoHideSplashScreen" value="true" />
-<preference name="BackupWebStorage" value="local" />
-<preference name="DisallowOverscroll" value="true" />
-<preference name="EnableViewportScale" value="false" />
-<preference name="FadeSplashScreen" value="false" />
-<preference name="FadeSplashScreenDuration" value="0" />
-<preference name="HideKeyboardFormAccessoryBar" value="false" />
-<preference name="KeyboardDisplayRequiresUserAction" value="true" />
-<preference name="KeyboardShrinksView" value="false" />
-<preference name="MediaPlaybackRequiresUserAction" value="false" />
-<preference name="ShowSplashScreenSpinner" value="false" />
-<preference name="SuppressesIncrementalRendering" value="true" />
-<preference name="TopActivityIndicator" value="gray" />
-<preference name="SplashScreenDelay" value="0" />
-<!-- Preferences for iOS -->
-<!-- Preferences for BB10 -->
-<feature name="Notification" value="Notification"/>
-<preference name="ChildBrowser" value="enable"/>
-<preference name="DiskCache" value="enable"/>
-<preference name="HideKeyboardFormAccessoryBar" value="true"/>
-<preference name="Orientation" value="default"/>
-<preference name="PopupBlocker" value="disable"/>
-<preference name="WebSecurity" value="disable"/>
-<preference name="AutoHideSplashScreen" value="true"/>
-<!-- Preferences for BB10 -->
-<!-- Preferences for UBUNTU -->
-<icon src="icon.png" />
-<!-- Preferences for UBUNTU -->
-<feature name="LocalStorage">
-<param name="ios-package" value="CDVLocalStorage" />
-</feature>
-<feature name="App">
-<param name="android-package" value="org.apache.cordova.App" />
-</feature>
-<feature name="Notification">
-<param name="ios-package" value="CDVNotification" />
-<param name="android-package" value="org.apache.cordova.dialogs.Notification" />
-<param name="wp-package" value="Notification" />
-</feature>
-<feature name="InAppBrowser">
-<param name="ios-package" value="CDVInAppBrowser" />
-<param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
-<param name="wp-package" value="InAppBrowser" />
-</feature>
-<feature name="org.apache.cordova.facebook.Connect">
-<param name="ios-package" value="FacebookConnectPlugin" />
-<param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
-</feature>
-<feature name="Device">
-<param name="wp-package" value="Device" />
-</feature>
-<feature name="LocalNotification">
-<param name="wp-package" value="LocalNotification"/>
-</feature>
+  <vs:features />
+  <preference name="SplashScreen" value="screen" />
+  <preference name="windows-target-version" value="8.1" />
+  <preference name="windows-phone-target-version" value="8.1" />
+
 </widget>

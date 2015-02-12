@@ -1,4 +1,4 @@
-// Category Collection
+﻿// Category Collection
 // ===================
 
 // Includes file dependencies

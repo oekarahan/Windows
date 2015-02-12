@@ -1,4 +1,4 @@
-// Sets the require.js configuration for your application.
+﻿// Sets the require.js configuration for your application.
 require.config( {
 
 	baseUrl: "../js",

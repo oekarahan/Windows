@@ -104,7 +104,7 @@
 
                             <li id="scan">
                                 <div id="divscanner">
-                                    <a href="#">
+                                    <a href="#Barcodescanner">
                                         <img src="css/scanner.PNG" />
                                         <span>Scanner</span>
                                     </a>
@@ -580,6 +580,60 @@
 
             </div>
 
+        
+ <!---------------------------------------------------------BarcodeScanner-------------------------------------------------------------------------------->
+
+        <div data-role="page" id="Barcodescanner">
+
+            <div id="navigation">
+
+                <div class="navii">
+
+                    <ul>
+
+                        <li id="zurück">
+                            <div id="divzuruck">
+                                <a onclick="history.back()" class="azurück">
+                                    <img src="css/zuruck.png" />
+                                </a>
+                            </div>
+
+                        </li>
+
+                        <li id="produkt">
+                            <div id="divprodukt">
+                                <a href="#produktgruppen">
+                                    <img src="css/pro_weiss.png" id="produktbild" />
+                                    <span>Produkte</span>
+                                </a>
+                            </div>
+
+                        </li>
+
+                        <li id="scan">
+                            <div id="divscanner">
+                                <a href="scanner.html">
+                                    <img src="css/scanner.PNG" />
+                                    <span>Scanner</span>
+                                </a>
+                            </div>
+                        </li>
+
+
+                        <li id="sucheli">
+                            <div id="divsuche">
+                                <textarea id="artikelsuchensuche" style="overflow: hidden; margin-left: 78px" placeholder="SUCHE"></textarea>
+                                <img onclick="datahandler.Suchen(document.getElementById('artikelsuchensuche').value);" src="css/lupe.png" id="bild" />
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+            <div id="scannerinhalt"><button id="scann">scannen</button></div>
+        </div>
 </div>
 
 

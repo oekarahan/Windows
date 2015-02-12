@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+
+    <title>BlankCordovaApp2</title>
+
+    <link href="../css/klinik.css" rel="stylesheet" media="screen" />
+
+
+</head>
+
+<body>
+
+
+
+
+
+    <div class="navii">
+        <div id="navi">
+
+            <li id="zurück">
+                <a onclick="history.back()" class="azurück">
+                    <img src="../css/zurück.png" width="80" height="55" style="margin-right: 30px; border-style: none" />
+                </a>
+            </li>
+
+            <li id="produkt">
+                <a href="klinik.html">
+                    <img src="../css/pro_weiss.png" style="margin-right: 83px; border-style: none" />
+                </a>
+            </li>
+
+            <li id="leistungen">
+                <a href="leistungen.html">
+                    <img src="../css/leistung.png" width="50" height="50" style="margin-right: 83px; border-style: none" />
+                </a>
+            </li>
+
+            <li id="scan">
+                <a href="scanner.html">
+                    <img src="../css/scanner.png" width="50" height="50" style="margin-right: 75px; border-style: none" />
+                </a>
+            </li>
+
+            <li id="feld1">
+                <input type="text" id="feld" placeholder=" &nbsp;SUCHE" width="160" height="40" />
+                <img src="../css/search.png" id="lupe" width="40" height="35" style="margin-right: 30px ; border-style: none" />
+            </li>
+
+
+            <div class="schrift">
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <a style="margin-right: 50px" id="produktschrift">Produkte</a>
+                <a style="margin-right: 58px" id="leistungschrift">Leistungen</a>
+                <a style="margin-right: 65px" id="scanschrift">Scanner</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../scripts/jquery-2.1.0.min.js"></script>
+
+    <script>
+
+        $(document).ready(function(){
+
+
+            $.ajax({
+
+                type: 'POST',
+                url: 'https://katalog.ivf.hartmann.info/mobileapi/index.php',
+                data: 'language=DE',
+                dataType: 'json',
+                cache: false,
+                error: function (xhr, ajaxOptions, thrownError) { console.log(xhr.status); console.log(thrownError); console.log(xhr.responseText) },
+                success: function (result) {
+
+                    console.log(result.data);
+
+                    for (index = 0; index < result.data.length; index++) {
+                        
+                        console.log(result.data[index].name);
+                        console.log(result.data[index].subGroups);
+                        
+
+
+                        $('#output').append('<div style="float: left; border: solid black" ><a href="subgruppe.html">'+result.data[index].name+' ' + result.data[index].subGroups +  '</a></span></div><div style=" float: left;"></div><div style="clear: both"></div>');
+
+
+                    }
+
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+
+    <div id="output"></div>
+
+
+</body>
+</html>

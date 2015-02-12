@@ -1,4 +1,4 @@
-// popup examples
+﻿// popup examples
 $( document ).on( "pagecreate", function() {
 
 	// The window width and height are decreased by 30 to take the tolerance of 15 pixels at each side into account

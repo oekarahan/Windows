@@ -1,4 +1,4 @@
-/* gmap plugin.
+﻿/* gmap plugin.
  *
  * 	$.gmap()
  * 	$.gmap({ ...options... })

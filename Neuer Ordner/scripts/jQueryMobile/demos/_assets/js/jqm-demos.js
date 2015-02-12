@@ -1,4 +1,4 @@
-// Turn off Ajax for local file browsing
+﻿// Turn off Ajax for local file browsing
 if ( location.protocol.substr(0,4)  === 'file' ||
      location.protocol.substr(0,11) === '*-extension' ||
      location.protocol.substr(0,6)  === 'widget' ) {

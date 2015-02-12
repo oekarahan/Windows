@@ -1,4 +1,4 @@
-// Category View
+﻿// Category View
 // =============
 
 // Includes file dependencies
