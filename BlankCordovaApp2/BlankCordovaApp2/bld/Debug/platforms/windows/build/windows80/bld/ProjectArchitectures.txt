@@ -1,1 +1,0 @@
-C:\Users\admin.karahan\Documents\Visual Studio 2013\Projects\BlankCordovaApp2\BlankCordovaApp2\bld\Debug\platforms\windows\CordovaApp.Windows80.jsproj;x64
