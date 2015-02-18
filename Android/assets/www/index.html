@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Katalog-App</title>
+
+
+    <link rel="stylesheet" href="css/jquery.mobile-1.0b1.min.css" />
+    <link href="css/index.css" rel="stylesheet" media="screen" />
+
+    <script src="scripts/jquery-2.1.1.min.js"></script>
+    <script src="scripts/jQueryMobile/jquery.mobile-1.4.5.js"></script>
+
+
+</head>
+
+<!-- hier wird die checkinternet funktion aufgerufen-->
+
+<body onload="checkInternet();" id="startseite">
+
+    <script src="../../cordova/lib/cordova.js"></script>
+    <script src="scripts/index.js"></script>
+    
+
+  <!------------------------------- Startseite------------------------------------------------------------->
+    <div class="mainContent">
+
+        <div data-role="page">
+
+            <div id=" logo">
+                <img id="hartmann" src="css/logo.png" />
+            </div>
+
+            <div id="uber">
+                <h1 id="uberschrift">
+                    WIR SIND DIE HELFER<br />
+                    DER HELFENDEN.
+                </h1>
+            </div>
+
+			<div id="progressbar" style="display:normal;"><img src="css/loader.gif"/></div>
+
+
+            <div id="icon">
+
+                <div id="iconicon" >
+                    <a href="#produktgruppen" style="display:block"><img id="img_icon" src="css/start_icons/klinik.png" /></a>
+                    <span id="klinik">KLINIK</span>
+                </div>
+                <div id="iconiconalters" >
+                    <a href="#produktgruppen" style="display:block"><img id="img_icon" src="css/start_icons/alters.png" /></a>
+                    <span id="alters">ALTERS-UND PFLEGEHEIME</span>
+                </div>
+                <div id="iconicon" >
+                    <a href="#produktgruppen" style="display:block"><img id="img_icon" src="css/start_icons/arzt.png" /></a>
+                    <span id="arzt">ARZTPRAXIS</span>
+                </div>
+
+                <div id="iconicon1" >
+                    <a href="#produktgruppen" style="display:block"><img src="css/start_icons/apo.png" /></a>
+                    <span>APOTHEKE/<br />DROGERIE</span>
+                </div>
+                <div id="iconiconindustrie" >
+                    <a href="#produktgruppen" style="display:block"><img src="css/start_icons/industrie.png"></a>
+                    <span>INDUSTRIE</span>
+                </div>
+                <div id="iconicon1" >
+                    <a href="#produktgruppen" style="display:block"><img src="css/start_icons/private.png" /></a>
+                    <span>PRIVATE</span>
+                </div>
+            </div>
+        </div>
+
+        <!---------------------------------------------------------------------- Produktgruppen-------------------------------------------------------------->
+        <div data-role="page" id="produktgruppen">
+
+            <div id="navigation">
+
+                <div class="navii">
+                    
+                        <ul>
+                            
+                                <li id="zurück">
+                                    <div id="divzuruck">
+                                        <a onclick="history.back()" class="azurück">
+                                            <img src="css/zuruck.png" />
+                                        </a>
+                                    </div>
+
+                                </li>
+
+                                <li id="produkt">
+                                    <div id="divprodukt">
+                                        <a href="#">
+                                            <img src="css/pro_weiss.png" id="produktbild" />
+                                            <span>Produkte</span>
+                                        </a>
+                                    </div>
+
+                                </li>
+
+
+                               
+
+                                <li id="scan">
+                                    <div id="divscanner">
+                                        <a href="scanner.html">
+                                            <img src="css/scanner.PNG" />
+                                            <span>Scanner</span>
+                                        </a>
+                                    </div>
+                                </li>
+
+
+                                <li id="sucheli">
+                                    <div id="divsuche">
+                                        <textarea id="suchen" style="overflow: hidden; margin-left: 78px" placeholder="SUCHE"></textarea>
+                                        <img onclick="datahandler.Suchen(document.getElementById('suchen').value);" src="css/lupe.png" id="bild" />
+                                    </div>
+                                </li>
+                          
+                    </ul>
+                </div>
+            </div>
+            <br /><br /><br /><br />
+            <div id="prodivtrans">
+            <div id="produktgruppen_inhalt" style="overflow-y:scroll;"></div>
+			</div>
+        </div>
+        <!---------------------------------------------------------------------- Subgruppen------------------------------------------------------------->
+
+        <div data-role="page" id="subgruppen">
+
+            <div id="navigation">
+
+                <div class="navii">
+
+                    <ul>
+
+                        <li id="zurück">
+                            <div id="divzuruck">
+                                <a onclick="history.back()" class="azurück">
+                                    <img src="css/zuruck.png" />
+                                </a>
+                            </div>
+
+                        </li>
+
+                        <li id="produkt">
+                            <div id="divprodukt">
+                                <a href="#produktgruppen">
+                                    <img src="css/pro_weiss.png" id="produktbild" />
+                                    <span>Produkte</span>
+                                </a>
+                            </div>
+
+                        </li>
+
+
+                        
+
+
+                        <li id="scan">
+                            <div id="divscanner">
+                                <a href="scanner.html">
+                                    <img src="css/scanner.PNG" />
+                                    <span>Scanner</span>
+                                </a>
+                            </div>
+                        </li>
+
+
+                        <li id="sucheli">
+                            <div id="divsuche">
+                                <textarea id="subsuchen" style="overflow: hidden; margin-left: 78px" placeholder="SUCHE"></textarea>
+                                <img onclick="datahandler.Suchen(document.getElementById('subsuchen').value);" src="css/lupe.png" id="bild" />
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div id="subdivtrans">
+            <div id="sub" style="overflow-y:scroll;"></div>
+			</div>
+        </div>
+        <!---------------------------------------------------------------------- Produkte------------------------------------------------------------->
+        <div data-role="page" id="produkte">
+
+            <div id="navigation">
+
+                <div class="navii">
+
+                    <ul>
+
+                        <li id="zurück">
+                            <div id="divzuruck">
+                                <a onclick="history.back()" class="azurück">
+                                    <img src="css/zuruck.png" />
+                                </a>
+                            </div>
+
+                        </li>
+
+                        <li id="produkt">
+                            <div id="divprodukt">
+                                <a href="#produktgruppen">
+                                    <img src="css/pro_weiss.png" id="produktbild" />
+                                    <span>Produkte</span>
+                                </a>
+                            </div>
+
+                        </li>
+
+
+                      
+                        <li id="scan">
+                            <div id="divscanner">
+                                <a href="scanner.html">
+                                    <img src="css/scanner.PNG" />
+                                    <span>Scanner</span>
+                                </a>
+                            </div>
+                        </li>
+
+
+                        <li id="sucheli">
+                            <div id="divsuche">
+                                <textarea id="prosuchen" style="overflow: hidden; margin-left: 78px" placeholder="SUCHE"></textarea>
+                                <img onclick="datahandler.Suchen(document.getElementById('prosuchen').value);" src="css/lupe.png" id="bild" />
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <br /><br /><br /><br />
+            <div id="prodivtrans">
+            <div id="products"  style="overflow-y:scroll;"></div>
+		</div>
+        </div>
+
+        <!---------------------------------------------------------------------- Artikelgruppen------------------------------------------------------------->
+        <div data-role="page" id="Artikelgruppen">
+
+            <div id="navigation">
+
+                <div class="navii">
+
+                    <ul>
+
+                        <li id="zurück">
+                            <div id="divzuruck">
+                                <a onclick="history.back()" class="azurück">
+                                    <img src="css/zuruck.png" />
+                                </a>
+                            </div>
+
+                        </li>
+
+                        <li id="produkt">
+                            <div id="divprodukt">
+                                <a href="#produktgruppen">
+                                    <img src="css/pro_weiss.png" id="produktbild" />
+                                    <span>Produkte</span>
+                                </a>
+                            </div>
+
+                        </li>
+
+                        <li id="scan">
+                            <div id="divscanner">
+                                <a href="scanner.html">
+                                    <img src="css/scanner.PNG" />
+                                    <span>Scanner</span>
+                                </a>
+                            </div>
+                        </li>
+
+
+                        <li id="sucheli">
+                            <div id="divsuche">
+                                <textarea id="artgrpsuchen" style="overflow: hidden; margin-left: 78px" placeholder="SUCHE"></textarea>
+                                <img onclick="datahandler.Suchen(document.getElementById('artgrpsuchen').value);" src="css/lupe.png" id="bild" />
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <br /><br /><br /><br />
+
+			  <div id="artgrpdivtrans">
+            <div id="artikelgrp" style="overflow-y:scroll;"></div>
+			</div>
+			
+            <div id="artikelgrpdiv" style="background-color: white;">
+
+                <div id="produktname"></div>
+
+                    <hr style="color:grey;" noshade size="1" align="center" />
+
+                <div id="artikelohneartikelgruppen" style="overflow-y:scroll;"></div>
+
+                <div id="buttonmedia"></div>
+
+            </div>
+
+        </div>
+        <!---------------------------------------------------------------------- Artikel der Artikelgruppen------------------------------------------------------------->
+        <div data-role="page" id="ArtikelgruppenArtikel">
+
+            <div id="navigation">
+
+                <div class="navii">
+
+                    <ul>
+
+                        <li id="zurück">
+                            <div id="divzuruck">
+                                <a onclick="history.back()" class="azurück">
+                                    <img src="css/zuruck.png" />
+                                </a>
+                            </div>
+
+                        </li>
+
+                        <li id="produkt">
+                            <div id="divprodukt">
+                                <a href="#produktgruppen">
+                                    <img src="css/pro_weiss.png" id="produktbild" />
+                                    <span>Produkte</span>
+                                </a>
+                            </div>
+
+                        </li>
+
+
+                        <li id="scan">
+                            <div id="divscanner">
+                                <a href="scanner.html">
+                                    <img src="css/scanner.PNG" />
+                                    <span>Scanner</span>
+                                </a>
+                            </div>
+                        </li>
+
+
+                        <li id="sucheli">
+                            <div id="divsuche">
+                                <textarea id="artgrpartsuchen" style="overflow: hidden; margin-left: 78px" placeholder="SUCHE"></textarea>
+                                <img onclick="datahandler.Suchen(document.getElementById('artgrpartsuchen').value);" src="css/lupe.png" id="bild" />
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div style="background-color: white;" id="divaga">
+
+                <div id="artgrp"></div>
+
+                <hr style="color:grey;" noshade size="1" align="center" />
+
+                <div id="artgrpart" style="overflow-y:scroll;"></div>
+
+                <div id="button"></div>
+
+            </div>
+        </div>
+
+        <!---------------------------------------------------------------------- Mediacenter (PDF-links)------------------------------------------------------------->
+        <div data-role="page" id="Mediacenter">
+
+            <div id="navigation">
+
+                <div class="navii">
+
+                    <ul>
+
+                        <li id="zurück">
+                            <div id="divzuruck">
+                                <a onclick="history.back()" class="azurück">
+                                    <img src="css/zuruck.png" />
+                                </a>
+                            </div>
+
+                        </li>
+
+                        <li id="produkt">
+                            <div id="divprodukt">
+                                <a href="#produktgruppen">
+                                    <img src="css/pro_weiss.png" id="produktbild" />
+                                    <span>Produkte</span>
+                                </a>
+                            </div>
+
+                        </li>
+
+
+                        
+
+
+                        <li id="scan">
+                            <div id="divscanner">
+                                <a href="scanner.html">
+                                    <img src="css/scanner.PNG" />
+                                    <span>Scanner</span>
+                                </a>
+                            </div>
+                        </li>
+
+
+                        <li id="sucheli">
+                            <div id="divsuche">
+                                <textarea id="mediacentersuche" style="overflow: hidden; margin-left: 78px" placeholder="SUCHE"></textarea>
+                                <img onclick="datahandler.Suchen(document.getElementById('mediacentersuche').value);" src="css/lupe.png" id="bild" />
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <br /><br /><br /><br />
+
+
+            <div id="media" >
+
+                <span id="sapnr">SAP Nr.:</span> &nbsp;&nbsp;&nbsp;<span id="saplink">Link:</span>
+                <b><hr style="color:#83d0e3; margin-left:5%; margin-right:5%;" /></b>
+                <div id="divmediacenter" ></div>
+
+                <br />
+
+                <div id="prgrlinks"  ></div>
+                <div id="sublinks" ></div>
+                <div id="prolinks"></div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-------------------------------------------------------------Suchergebnisse ----------------------------------------------------------->
+
+        <div data-role="page" id="Suche">
+
+            <div id="navigation">
+
+                <div class="navii">
+
+                    <ul>
+
+                        <li id="zurück">
+                            <div id="divzuruck">
+                                <a onclick="history.back()" class="azurück">
+                                    <img src="css/zuruck.png" />
+                                </a>
+                            </div>
+
+                        </li>
+
+                        <li id="produkt">
+                            <div id="divprodukt">
+                                <a href="#produktgruppen">
+                                    <img src="css/pro_weiss.png" id="produktbild" />
+                                    <span>Produkte</span>
+                                </a>
+                            </div>
+
+                        </li>
+
+
+                      
+                   
+                        <li id="scan">
+                            <div id="divscanner">
+                                <a href="scanner.html">
+                                    <img src="css/scanner.PNG" />
+                                    <span>Scanner</span>
+                                </a>
+                            </div>
+                        </li>
+
+
+                        <li id="sucheli">
+                            <div id="divsuche">
+                                <textarea id="suchesuche" style="overflow: hidden; margin-left: 78px" placeholder="SUCHE"></textarea>
+                               
+                                <img onclick="datahandler.Suchen(document.getElementById('suchesuche').value);" src="css/lupe.png" id="bild" />
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <br /><br /><br /><br /><br />
+
+            <div id="zahler" style="margin-left: 0.5cm;"></div>
+
+            <div id="divsuchediv">
+
+                <div id="prgr"></div>
+
+                <div id="artgr"></div>
+
+
+
+            </div>
+
+        </div>
+        <!--------------------------------------------------------------Artikelsuche_Ergebnis-------------------------------------------------------------------------------------->
+
+        <div data-role="page" id="Artikelsuche">
+
+            <div id="navigation">
+
+                <div class="navii">
+
+                    <ul>
+
+                        <li id="zurück">
+                            <div id="divzuruck">
+                                <a onclick="history.back()" class="azurück">
+                                    <img src="css/zuruck.png" />
+                                </a>
+                            </div>
+
+                        </li>
+
+                        <li id="produkt">
+                            <div id="divprodukt">
+                                <a href="#produktgruppen">
+                                    <img src="css/pro_weiss.png" id="produktbild" />
+                                    <span>Produkte</span>
+                                </a>
+                            </div>
+
+                        </li>
+
+
+                        
+
+                        <li id="scan">
+                            <div id="divscanner">
+                                <a href="scanner.html">
+                                    <img src="css/scanner.PNG" />
+                                    <span>Scanner</span>
+                                </a>
+                            </div>
+                        </li>
+
+
+                        <li id="sucheli">
+                            <div id="divsuche">
+                                <textarea id="artikelsuchensuche" style="overflow: hidden; margin-left: 78px" placeholder="SUCHE"></textarea>
+                                <img onclick="datahandler.Suchen(document.getElementById('artikelsuchensuche').value);" src="css/lupe.png" id="bild" />
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <br /><br /><br /><br />
+            <div id="x" style="margin-left: 4cm;"></div>
+
+            <div style="border-radius: 5px; background-color: white; top:300px; height: 600px; width:400px; margin-left:4cm; overflow:scroll; padding:10px">
+
+                <div id="artikel"></div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        //-----------------------------------------------Prdouktgruppen werden angezeigt---------------------------------------------------------------------------------------------------------------
+
+
+        datahandler =
+
+            {
+                data: null,
+                nextid: 0,
+
+
+                showProductGroups: function () { //Produktgruppen
+                    $('#produktgruppen_inhalt').html('');
+
+                    for (index = 0; index < datahandler.data.length; index++) {
+
+                        var div = document.createElement('div');
+                        var pgname = datahandler.data[index].name;
+                        var prgrbild = datahandler.data[index].image;
+
+
+
+                        div.style.styleFloat = "left";
+
+                        div.innerHTML = '<div id="pagename"><b>' + pgname + '</div><div style="clear: both"><img id="bildprgr"  src="data:image/jpg;base64,' + prgrbild + '"/></div>';
+
+                        var gr_fk = datahandler.data[index].gr_fk;
+
+                        $('#produktgruppen_inhalt').append(div);
+
+                        console.log(datahandler.data);
+
+                        var makeShowItemEventListener = function (element) {
+                            return function () {
+                                datahandler.nextid = element;
+                                $.mobile.pageContainer.pagecontainer("change", "#subgruppen", { test: "Hello World!" });
+                            };
+                        }
+                        div.onclick = makeShowItemEventListener(gr_fk);
+                    }
+                },
+                //----------------------------------------------Subgruppen werden angezeigt----------------------------------------------------------------------------------------------------------------
+                showSubgroups: function (prgr_fk) { //SubGruppen
+
+                    for (index = 0; index < datahandler.data.length; index++) {
+
+                        if (datahandler.data[index].gr_fk == prgr_fk) {
+
+                            var lange = datahandler.data[index].subGroups.length
+                            $('#sub').html('');
+                            for (var i = 0; i < lange; i++) {
+
+                                var subgruppen = datahandler.data[index].subGroups[i].name;
+                                var sg_fk = datahandler.data[index].subGroups[i].sg_fk;
+                                var gr = datahandler.data[index].gr_fk;
+                                var subBilder = datahandler.data[index].subGroups[i].image;
+
+
+
+                                var div = document.createElement('div');
+                                //div.innerHTML = '<div  style="float: left; border: 0px;"><b>' + subgruppen + '</b></div><div style="clear: both"><img src="css/Probild.png"><div><div></div>';
+
+                                div.style.styleFloat = "left";
+                                div.innerHTML = '<div id="pagename"><b>' + subgruppen + '</div><div style="clear: both"><img id="bildsub"  src="data:image/jpg;base64,' + subBilder + '"/>&nbsp;&nbsp;&nbsp;&nbsp;</div>';
+
+                                $('#sub').append(div);
+
+
+                                var makeShowItemEventListener = function (element, sg_fk) {
+
+
+                                    return function () {
+                                        var tmp = [element, sg_fk];
+                                        datahandler.nextid = tmp;
+                                        $.mobile.pageContainer.pagecontainer("change", "#produkte", { test: "Hello World!" });
+                                    };
+                                }
+                                div.onclick = makeShowItemEventListener(gr, sg_fk);
+                            }
+                        }
+                    }
+
+                },
+                //---------------------------------------------------Produkte werden angezeigt-----------------------------------------------------------------------------------------------------------
+                showProducts: function (grgr) { //Produkte
+
+
+                    for (index = 0; index < datahandler.data.length; index++) {
+
+
+                        if (datahandler.data[index].gr_fk == grgr[0]) {
+                            $('#products').html('');
+                            var lange = datahandler.data[index].subGroups.length
+                            //console.log(lange);
+                            for (var i = 0; i < lange; i++) {
+
+                                var subgruppen = datahandler.data[index].subGroups[i].name;
+                                var produkte = datahandler.data[index].subGroups[i].products;
+                                var prolange = datahandler.data[index].subGroups[i].products.length;
+                                var sg_fk = datahandler.data[index].subGroups[i].sg_fk;
+                                var gr = datahandler.data[index].gr_fk;
+
+
+                                if (datahandler.data[index].subGroups[i].sg_fk == grgr[1]) {
+
+                                    for (var ii = 0; ii < prolange; ii++) {
+
+                                        var produktename = datahandler.data[index].subGroups[i].products[ii].name;
+                                        var div = document.createElement('div');
+                                        var prbild = datahandler.data[index].subGroups[i].products[ii].image;
+
+                                        div.style.styleFloat = "left";
+                                        div.innerHTML = '<div id="pagename"><b>' + produktename + '</div><div style="clear: both"><img id="bildpr" src="data:image/jpg;base64,' + prbild + '"/>&nbsp;&nbsp;&nbsp;&nbsp;</div>';
+
+                                        $('#products').append(div);
+
+                                        var sg_fk = datahandler.data[index].subGroups[i].sg_fk;
+                                        var gr = datahandler.data[index].gr_fk;
+                                        var pk = datahandler.data[index].subGroups[i].products[ii].pk;
+
+                                        var makeShowItemEventListener = function (element, sg_fk, pk) {
+                                            return function () {
+                                                var tmp = [element, sg_fk, pk];
+                                                datahandler.nextid = tmp;
+                                                $.mobile.pageContainer.pagecontainer("change", "#Artikelgruppen", { test: "Hello World!" });
+                                            };
+                                        }
+                                        div.onclick = makeShowItemEventListener(gr, sg_fk, pk);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                //---------------------------------------------es wird geprüft ob Artikelgruppen bestehen-----------------------------------------------------------------------------------------------------------------
+                showArtikelgruppen: function (grgr) {
+                    for (index = 0; index < datahandler.data.length; index++) {
+
+                        if (datahandler.data[index].gr_fk == grgr[0]) {
+
+                            $('#artikelgrp').html(''); // nach dem ausgeben immer leeren sonst wird es doppelt ausgegeben
+                            $('#produktname').html('');
+                            $('#artikelohneartikelgruppen').html('');
+                            $('#buttonmedia').html('');
+
+                            var sublange = datahandler.data[index].subGroups.length
+
+                            for (var i = 0; i < sublange; i++) {
+
+                                if (datahandler.data[index].subGroups[i].sg_fk == grgr[1]) {
+
+                                    var prolange = datahandler.data[index].subGroups[i].products.length;
+
+                                    for (var ii = 0; ii < prolange; ii++) {
+
+                                        if (grgr[2] == datahandler.data[index].subGroups[i].products[ii].pk) {
+
+                                            var produktname = datahandler.data[index].subGroups[i].products[ii].name;
+                                            var artikelgruppen = datahandler.data[index].subGroups[i].products[ii].articlegroups;
+
+                                        }
+                                        if (artikelgruppen == null) {
+
+
+                                            document.getElementById("artikelgrpdiv").style.display = "";
+
+                                            document.getElementById("artgrpdivtrans").style.display = "none";
+
+                                            if (grgr[2] == datahandler.data[index].subGroups[i].products[ii].pk) {
+
+                                                var artikellange = datahandler.data[index].subGroups[i].products[ii].articles.length;
+                                                var divname = document.createElement('div');
+                                                var produktbild1 = datahandler.data[index].subGroups[i].products[ii].image;
+
+                                                $('#produktname').append(divname);
+                                                divname.innerHTML = '<div id="prddiv"><b><br>' + produktname + '</b></div><div ><img id="artgrpbild" src="data:image/jpg;base64,' + produktbild1 + '"/></div> ';
+
+                                                for (ind = 0; ind < artikellange; ind++) {
+
+                                                    var artikel_nr = datahandler.data[index].subGroups[i].products[ii].articles[ind].artikel_nr;
+                                                    var abmessung = datahandler.data[index].subGroups[i].products[ii].articles[ind].abmessung;
+                                                    var migel1 = datahandler.data[index].subGroups[i].products[ii].articles[ind].migel1;
+                                                    var verpackungshinweis = datahandler.data[index].subGroups[i].products[ii].articles[ind].verpackungshinweis;
+
+                                                    console.log(artikel_nr);
+
+                                                    var div = document.createElement('div');
+                                                    div.style.styleFloat = "left";
+                                                    div.innerHTML = '<div id="lala"><b>' + verpackungshinweis + '</b></div><div>' + abmessung + '</div><div id="mainselection"></div><div><span>Artikel_Nr.:&nbsp&nbsp&nbsp&nbsp</span>' + artikel_nr + '</div><div>' + migel1 + '</div><hr style="color:grey; noshade siz="3"/>';
+
+                                                    $('#artikelohneartikelgruppen').append(div);
+
+                                                }
+                                                var divaa = document.createElement('div');
+                                                var mediacenter = 'Mediacenter';
+
+                                                divaa.innerHTML = '<div id="footer"><br>&nbsp;&nbsp;&nbsp;<button name="button" style="background-color:#83d0e3; width:100px; height:25px; " value="Mediacenter" type="button"><span id="buttonschrift">' + mediacenter + '</span></button></div>';
+
+                                                $('#buttonmedia').append(divaa);
+
+                                                var makeShowItemEventListener = function (element, sg_fk, pk) {
+                                                    return function () {
+                                                        var tmp = [element, sg_fk, pk];
+                                                        datahandler.nextid = tmp;
+                                                        $.mobile.pageContainer.pagecontainer("change", "#Mediacenter", { test: "Hello World!" });
+                                                    };
+                                                }
+                                                divaa.onclick = makeShowItemEventListener(gr, sg_fk, pk);
+                                            }
+                                        } else {  // die Artikeln mt Artikelgruppen
+                                            document.getElementById("artikelgrpdiv").style.display = "none";
+                                            document.getElementById("artgrpdivtrans").style.display = "";
+
+                                            for (var ii = 0; ii < prolange; ii++) {
+
+                                                if (grgr[2] == datahandler.data[index].subGroups[i].products[ii].pk) {
+
+                                                    var produktname = datahandler.data[index].subGroups[i].products[ii].name;
+                                                    var artikelgruppen = datahandler.data[index].subGroups[i].products[ii].articlegroups;
+
+                                                    var lange = datahandler.data[index].subGroups[i].products[ii].articlegroups.length;
+
+                                                    if (grgr[2] == datahandler.data[index].subGroups[i].products[ii].pk) {
+
+                                                        for (ind = 0; ind < lange; ind++) {
+
+                                                            var artikelgruppe = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].name;
+                                                            console.log(artikelgruppe);
+                                                            var agbild = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].image;
+
+
+                                                            var div = document.createElement('div');
+
+                                                            div.style.styleFloat = "left";
+
+                                                            div.innerHTML = '<div id="pagename"><b>' + artikelgruppe + '</div><div style="clear: both"><img id="bildartikelgruppen"  src="data:image/jpg;base64,' + agbild + '"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>';
+                                                            $('#artikelgrp').append(div);
+
+
+
+                                                            var argr_fk = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].argr_fk;
+                                                            var sg_fk = datahandler.data[index].subGroups[i].sg_fk;
+                                                            var gr = datahandler.data[index].gr_fk;
+                                                            var pk = datahandler.data[index].subGroups[i].products[ii].pk;
+
+                                                            var makeShowItemEventListener = function (element, sg_fk, pk, argr_fk) {
+                                                                return function () {
+                                                                    var tmp = [element, sg_fk, pk, argr_fk];
+                                                                    datahandler.nextid = tmp;
+                                                                    $.mobile.pageContainer.pagecontainer("change", "#ArtikelgruppenArtikel", { test: "Hello World!" });
+                                                                };
+                                                            }
+                                                            div.onclick = makeShowItemEventListener(gr, sg_fk, pk, argr_fk);
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                //-------------------------------------------------------------Artikeln der Artikelgruppen werden angezeigt-------------------------------------------------------------------------------------------------
+                showArtikelgruppenArtikel: function (grgr) {
+
+                    console.log('test');
+
+
+
+
+                    for (index = 0; index < datahandler.data.length; index++) {
+
+                        if (datahandler.data[index].gr_fk == grgr[0]) {
+
+                            $('#artgrpart').html('');
+                            $('#artgrp').html('');
+                            $('#button').html('');
+
+                            var sublange = datahandler.data[index].subGroups.length
+
+                            for (var i = 0; i < sublange; i++) {
+
+                                if (datahandler.data[index].subGroups[i].sg_fk == grgr[1]) {
+
+                                    var prolange = datahandler.data[index].subGroups[i].products.length;
+
+                                    for (var ii = 0; ii < prolange; ii++) {
+
+                                        if (grgr[2] == datahandler.data[index].subGroups[i].products[ii].pk) {
+
+                                            var produktname = datahandler.data[index].subGroups[i].products[ii].name;
+                                            var artikelgruppen = datahandler.data[index].subGroups[i].products[ii].articlegroups;
+                                        }
+
+                                        if (artikelgruppen == null) {
+
+                                        } else {
+
+                                            if (grgr[2] == datahandler.data[index].subGroups[i].products[ii].pk) {
+                                                var lange = datahandler.data[index].subGroups[i].products[ii].articlegroups.length;
+
+                                                for (ind = 0; ind < lange; ind++) {
+
+                                                    var artikelgruppename = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].name;
+                                                    var artlange = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].articles.length;
+
+                                                    if (grgr[3] == datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].argr_fk) {
+
+                                                        var artgrpbild = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].image;
+
+
+                                                        var div = document.createElement('div');
+
+                                                        $('#artgrp').append(div);
+
+                                                        div.innerHTML = '<div id="artikelgruppename"><br>' + artikelgruppename + '</div> <div ><img id="artgrpbild" src="data:image/jpg;base64,' + artgrpbild + '"/></div> ';
+
+                                                        for (inde = 0; inde < artlange; inde++) {
+
+                                                            var abmessung = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].articles[inde].abmessungen;
+                                                            var verpackungshinweis = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].articles[inde].verpackungshinweis;
+                                                            var artikel_nr = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].articles[inde].artikel_nr;
+                                                            var migel1 = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].articles[inde].migel1;
+
+
+                                                            console.log(abmessung);
+                                                            console.log(verpackungshinweis);
+                                                            console.log(artikel_nr);
+                                                            console.log(migel1);
+
+                                                            var argr_fk = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].argr_fk;
+                                                            var sg_fk = datahandler.data[index].subGroups[i].sg_fk;
+                                                            var gr = datahandler.data[index].gr_fk;
+                                                            var pk = datahandler.data[index].subGroups[i].products[ii].pk;
+                                                            var divb = document.createElement('div');
+
+                                                            //div.style.styleFloat = "left";
+
+                                                            $('#artgrpart').append(divb);
+                                                            divb.innerHTML = '<div id="lala"><b>' + verpackungshinweis + '</b></div><div>' + abmessung + '</div><div id="mainselection"></div><div><span>Artikel_Nr.:&nbsp&nbsp&nbsp&nbsp</span>' + artikel_nr + '</div><div>' + migel1 + '</div><hr style="color:grey; noshade siz="3"/>';
+                                                            
+                                                        }
+                                                        var divaa = document.createElement('div');
+                                                        var mediacenter = 'Mediacenter';
+
+                                                        divaa.innerHTML = '<div id="footer"><br>&nbsp;&nbsp;&nbsp;<button name="button" style="background-color:#83d0e3; width:100px; height:25px; " value="Mediacenter" type="button"><span id="buttonschrift">' + mediacenter + '</span></button></div>';
+
+                                                        $('#button').append(divaa);
+
+                                                        var makeShowItemEventListener = function (element, sg_fk, pk, argr_fk) {
+
+                                                            return function () {
+
+
+                                                                var tmp = [element, sg_fk, pk, argr_fk];
+                                                                datahandler.nextid = tmp;
+                                                                $.mobile.pageContainer.pagecontainer("change", "#Mediacenter", { test: "Hello World!" });
+                                                            };
+                                                        }
+                                                        divaa.onclick = makeShowItemEventListener(gr, sg_fk, pk, argr_fk);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                //---------------------------------------------------------pdf links werden angezeigt-----------------------------------------------------------------------------------------------------
+                showMediacenter: function (grgr) {
+
+                    //console.log('test1');
+
+                    for (index = 0; index < datahandler.data.length; index++) {
+
+                        if (datahandler.data[index].gr_fk == grgr[0]) {
+
+                            $('#prgrlinks').html('');
+                            $('#sublinks').html('');
+                            $('#prolinks').html('');
+
+
+                            var lange = datahandler.data[index].subGroups.length
+                            var prgrlinklange = datahandler.data[index].links.length;
+                            var prgrname = datahandler.data[index].name;
+
+
+                            console.log('Links der Produktgruppe' + prgrname);
+                            console.log(prgrlinklange)
+
+                            // produktgruppenlinks werden ausgegeben
+                            for (pi = 0; pi < prgrlinklange; pi++) {
+
+                                var prgrlink = datahandler.data[index].links[pi].link;
+                                var prgrsap = datahandler.data[index].links[pi].sap_nr;
+                                var prgrurl = datahandler.data[index].links[pi].url;
+
+
+                                console.log(prgrlink);
+                                console.log(prgrurl);
+
+                                var div = document.createElement('div');
+                                div.innerHTML = '<div><span  id="sap">' + prgrsap + '</span><div id="divlink" ><a style="color:#74cae0;" id="alink" href="' + prgrurl + '">' + prgrlink + '</a></div><hr noshade size="0.3" style="color:grey;" />';
+                                $('#prgrlinks').append(div);
+                            }
+
+                            for (i = 0; i < lange; i++) {
+
+                                if (datahandler.data[index].subGroups[i].sg_fk == grgr[1]) {
+
+                                    var prolange = datahandler.data[index].subGroups[i].products.length;
+                                    var sublinklange = datahandler.data[index].subGroups[i].links.length;
+                                    var subname = datahandler.data[index].subGroups[i].name;
+
+                                    console.log('Links der Subgruppe' + subname);
+                                    console.log(sublinklange);
+                                    // subgruppen links werden ausgegeben
+
+                                    for (si = 0; si < sublinklange; si++) {
+
+                                        var sublinks = datahandler.data[index].subGroups[i].links[si].link;
+                                        var subsap = datahandler.data[index].subGroups[i].links[si].sap_nr;
+                                        var suburl = datahandler.data[index].subGroups[i].links[si].url;
+
+                                        console.log(sublinks);
+                                        console.log(suburl);
+
+                                        var div = document.createElement('div');
+                                        div.innerHTML = '<div><span  id="sap">' + subsap + '</span><div id="divlink" ><a style="color:#74cae0;" id="alink" href="' + suburl + '">' + sublinks + '</a></div><hr noshade size="0.3" style="color:grey;" />';
+                                        $('#sublinks').append(div);
+                                    }
+
+                                    for (ii = 0; ii < prolange; ii++) {
+
+                                        if (datahandler.data[index].subGroups[i].products[ii].pk == grgr[2]) {
+
+                                            var prolinklange = datahandler.data[index].subGroups[i].products[ii].links.length;
+                                            var proname = datahandler.data[index].subGroups[i].products[ii].name;
+
+                                            console.log('Links der Produkte' + proname);
+                                            console.log(prolinklange);
+
+                                            // produkte links werden ausgegeben
+                                            for (pri = 0; pri < prolinklange; pri++) {
+
+                                                var prolinks = datahandler.data[index].subGroups[i].products[ii].links[pri].link;
+                                                var prosap = datahandler.data[index].subGroups[i].products[ii].links[pri].sap_nr;
+                                                var prourl = datahandler.data[index].subGroups[i].products[ii].links[pri].url;
+
+
+                                                console.log(prolinks);
+
+
+                                                var div = document.createElement('div');
+                                                div.innerHTML = '<div><span  id="sap">' + prosap + '</span><div id="divlink" ><a style="color:#74cae0;" id="alink" href="' + prourl + '">' + prolinks + '</a></div><hr noshade size="0.3" style="color:grey;" />';
+                                                $('#prolinks').append(div);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                //----------------------------------------------------------lokale daten werden ausgegeben--------------------------------------------------------------------------------------------------------------
+                localStorage_ausgeben: function () {
+
+                    console.log('ich bin im localStorage');
+
+                    var alleDaten = JSON.parse(localStorage.getItem('feld'));
+
+                    datahandler.data = alleDaten;
+
+                    console.log(datahandler.data);
+
+                    /*  for (var i = 0; i < localStorage.length; i++) {
+
+                          var name = alleDaten[i].name;
+                          var prgr_fk = alleDaten[i].prgr_fk;
+
+                          console.log(name, prgr_fk);
+
+                      }*/
+                      
+                      
+                      
+                },
+
+                //--------------------------------------------------Webservice wird aufgerufen und daten werden lokal abgespeichert------------------------------------------------------------------------------------------------------------
+
+                loaddata: function () {
+                	
+                
+                    console.log('mit dem Webservice verbunden');
+
+                    $.ajax({
+                        type: 'POST',
+                        url: 'https://katalog.ivf.hartmann.info/mobileapi/index.php',
+                        data: 'language=DE',
+                        dataType: 'json',
+                        cache: false,
+                        error: function (xhr, ajaxOptions, thrownError) { console.log(xhr.status); console.log(thrownError); console.log(xhr.responseText) },
+                        success: function (result) {
+                            datahandler.data = result.data;
+                            
+                            
+                            document.getElementById("progressbar").style.display="none";
+                            document.getElementById("icon").style.display="";
+                            
+                            
+                            // Daten als feld in localStorage speichern!
+                            var feld = [];
+                            localStorage["feld"] = JSON.stringify(datahandler.data);
+                            var alleDaten = JSON.parse(localStorage["feld"]);
+
+                            //console.log(alleDaten);
+
+                        }
+                    });
+                },
+
+                /***********************************************Suchen Nr1 page= Produktgruppen***********************************************////////////////////
+                Suchen: function (param) {
+
+                    var zahler = 0;
+
+
+                    console.log('ich suche im LocalStorage');
+                    var alleDaten = JSON.parse(localStorage.getItem('feld')); //die Daten aus dem localStorage werden mit get ausgelesen
+                    datahandler.data = alleDaten; //alleDaten aus dem lokalStorage werden in datahandler.data geschrieben
+
+
+                    if (suchbegriff == '') {
+
+
+                        $.mobile.pageContainer.pagecontainer("change", "#Suche", { test: "Hello World!" });
+
+                        $('#zahler').html('');
+                        var x = 0;
+                        var div = document.createElement('div');
+                        div.innerHTML = '<div><span style="color: #1a4064;"><b>Es wurden ' + x + ' Ergebnisse gefunden!</b></span></div>';
+                        $('#zahler').append(div);
+
+
+                    } else {
+
+
+                        var suchbegriff = param; //Begriff wird aus Textfeld ausgelesen
+                        var Suche = new RegExp(suchbegriff, "gi");
+
+                        if (isNaN(Suche)) {
+
+
+                            $('#prgr').html('');
+
+                            $.mobile.pageContainer.pagecontainer("change", "#Suche", { test: "Hello World!" });
+
+
+                            var diva = document.createElement('div');
+                            diva.innerHTML = '<span style="color: #1a4064;">Produktgruppen</span>';
+                            $('#prgr').append(diva);
+
+                            //Produktgruppe durchsuchen
+                            for (var index = 0; index < datahandler.data.length; index++) {
+
+
+                                var sublange = datahandler.data[index].subGroups.length;
+                                var prgrname = datahandler.data[index].name;
+
+                                if (prgrname.search(Suche) >= 0) {
+                                    zahler++;
+
+
+
+                                    var gr = datahandler.data[index].gr_fk;
+
+                                   //console.log(prgrname);
+
+                                    var div = document.createElement('div');
+                                    div.innerHTML = '<div><span style="color:#74cae0;">' + prgrname + '</span></div>';
+                                    $('#prgr').append(div);
+
+                                    var makeShowItemEventListener = function (element) {
+                                        return function () {
+                                            var tmp = [element];
+                                            datahandler.nextid = tmp;
+                                            $.mobile.pageContainer.pagecontainer("change", "#subgruppen", { test: "Hello World!" });
+                                        };
+                                    }
+                                    div.onclick = makeShowItemEventListener(gr);
+
+                                } else {
+
+                                   // console.log('kein Treffer');
+
+                                }
+                            }
+                            var x = zahler;
+                            //console.log(x);
+                            datahandler.subsuchen(Suche, x);
+
+
+
+
+                        } else {
+
+                            datahandler.artikelsuchen(Suche); // falls zahlen eingeben werden
+
+                        }
+                    }
+                },
+
+                //-----------------------------------------subgruppen druchsuchen------------------------------------------------------------------------
+
+                subsuchen: function (Suche, x) {
+
+                   // console.log('subsuche');
+                    //console.log(suchbegriff);
+
+
+                    var zahler = x;
+                    //console.log(zahler);
+
+                    var diva = document.createElement('div');
+                    diva.innerHTML = '<span style="color: #1a4064;">Subgruppen</span>';
+                    $('#prgr').append(diva);
+
+                    for (var index = 0; index < datahandler.data.length; index++) {
+                        var sublange = datahandler.data[index].subGroups.length;
+
+                        for (var i = 0; i < sublange; i++) {
+
+                            var subname = datahandler.data[index].subGroups[i].name;
+
+                            if (subname.search(Suche) >= 0) {
+                                zahler++;
+
+                                var prolange = datahandler.data[index].subGroups[i].products.length;
+                                var prgrname = datahandler.data[index].name;
+
+
+                                for (var ii = 0; ii < prolange; ii++) {
+
+                                    var pk = datahandler.data[index].subGroups[i].products[ii].pk;
+
+                                }
+
+                                var sg_fk = datahandler.data[index].subGroups[i].sg_fk;
+                                var gr = datahandler.data[index].gr_fk;
+
+
+                                var div = document.createElement('div');
+                                div.innerHTML = '<div><span style="color:#74cae0;" id="span">' + prgrname + '<b>  >  </b>' + subname + '</span></div>';
+                                $('#prgr').append(div);
+
+                                var makeShowItemEventListener = function (element, sg_fk, pk) {
+                                    return function () {
+                                        var tmp = [element, sg_fk, pk];
+                                        datahandler.nextid = tmp;
+                                        $.mobile.pageContainer.pagecontainer("change", "#produkte", { test: "Hello World!" });
+                                    };
+                                }
+                                div.onclick = makeShowItemEventListener(gr, sg_fk, pk);
+
+
+
+                            } else {
+
+                                //console.log('kein Treffer');
+                            }
+                        }
+                    }
+                    var x = zahler;
+
+                    //console.log(x);
+                    datahandler.prosuchen(Suche, x);
+
+                },
+
+                //-----------------------------------------produkte druchsuchen----------------------------------------------------------------------------
+
+
+                prosuchen: function (Suche, x) {
+
+
+
+                    var zahler = x;
+                   // console.log(zahler);
+
+                    //console.log('prosuche');
+                    //console.log(suchbegriff);
+
+
+                    var diva = document.createElement('div');
+                    diva.innerHTML = '<span style="color: #1a4064;">Produkte</span>';
+                    $('#prgr').append(diva);
+
+                    for (var index = 0; index < datahandler.data.length; index++) {
+                        var sublange = datahandler.data[index].subGroups.length;
+                        for (var i = 0; i < sublange; i++) {
+                            var prolange = datahandler.data[index].subGroups[i].products.length;
+
+                            for (var ii = 0; ii < prolange; ii++) {
+
+                                var proname = datahandler.data[index].subGroups[i].products[ii].name;
+                                var artgr = datahandler.data[index].subGroups[i].products[ii].articlegroups;
+                                var prgrname = datahandler.data[index].name;
+                                var subname = datahandler.data[index].subGroups[i].name;
+
+
+                                if (proname.search(Suche) >= 0) {
+
+                                    var prgrname = datahandler.data[index].name;
+                                    var subname = datahandler.data[index].subGroups[i].name;
+
+                                    //console.log(proname);
+
+
+                                    if (artgr != null) {
+
+                                        var artgrlange = datahandler.data[index].subGroups[i].products[ii].articlegroups.length;
+
+                                        for (var ind = 0; ind < artgrlange; ind++) {
+
+                                            var argr_fk = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].argr_fk;
+                                            var argr_name = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].name;
+
+                                        }
+
+                                        var sg_fk = datahandler.data[index].subGroups[i].sg_fk;
+                                        var gr = datahandler.data[index].gr_fk;
+                                        var pk = datahandler.data[index].subGroups[i].products[ii].pk;
+
+
+                                        zahler++;
+                                        var divaa = document.createElement('div');
+                                        divaa.innerHTML = '<div><span style="color:#74cae0;">' + prgrname + '<b> > </b>' + subname + '<b> > </b>' + proname + '<b> > </b>' + argr_name + ' </span></div>';
+                                        $('#prgr').append(divaa);
+
+                                        var makeShowItemEventListener = function (element, sg_fk, pk, argr_fk) {
+                                            return function () {
+                                                var tmp = [element, sg_fk, pk, argr_fk];
+                                                datahandler.nextid = tmp;
+                                                $.mobile.pageContainer.pagecontainer("change", "#Artikelgruppen", { test: "Hello World!" });
+                                            };
+                                        }
+                                        divaa.onclick = makeShowItemEventListener(gr, sg_fk, pk, argr_fk);
+
+
+                                        datahandler.artgrsuchen(Suche,x);
+
+
+                                    } else {
+
+                                        zahler++;
+                                        var divaa = document.createElement('div');
+                                        divaa.innerHTML = '<div><span style="color:#74cae0;">' + prgrname + '<b> > </b>' + subname + '<b> > </b>' + proname + '<b> > </b>' + argr_name + ' </span></div>';
+                                        $('#prgr').append(divaa);
+
+                                        var sg_fk = datahandler.data[index].subGroups[i].sg_fk;
+                                        var gr = datahandler.data[index].gr_fk;
+                                        var pk = datahandler.data[index].subGroups[i].products[ii].pk;
+
+
+                                        var makeShowItemEventListener = function (element, sg_fk, pk) {
+                                            return function () {
+                                                var tmp = [element, sg_fk, pk];
+                                                datahandler.nextid = tmp;
+                                                $.mobile.pageContainer.pagecontainer("change", "#Artikelgruppen", { test: "Hello World!" });
+                                            };
+                                        }
+                                        divaa.onclick = makeShowItemEventListener(gr, sg_fk, pk);
+
+
+
+
+                                    }
+
+                                }
+
+                                var x = zahler;
+                               // console.log(x);
+                                //datahandler.artgrsuchen(Suche, x);
+
+                            }
+                        }
+
+                    }
+
+                },
+
+
+                //----------------------------------------------------Artikelgruppen durchsuchen--------------------------------------------------------------------------------
+
+                artgrsuchen: function (Suche, x) {
+
+
+
+                    var zahler = x;
+                    //console.log('Artikelgruppen_suche');
+
+                    $('#artgr').html('');
+
+
+                    var diva = document.createElement('div');
+                    diva.innerHTML = '<span style="color: #1a4064;">Artikel</span>';
+                    $('#artgr').append(diva);
+
+                    for (var index = 0; index < datahandler.data.length; index++) {
+
+                        var sublange = datahandler.data[index].subGroups.length
+
+                        for (var i = 0; i < sublange; i++) {
+
+                            var prolange = datahandler.data[index].subGroups[i].products.length;
+
+
+                            for (var ii = 0; ii < prolange; ii++) {
+
+                                var artgr = datahandler.data[index].subGroups[i].products[ii].articlegroups
+
+                                if (artgr != null) {
+
+                                    var artgrlange = datahandler.data[index].subGroups[i].products[ii].articlegroups.length;
+
+                                    for (var ind = 0; ind < artgrlange; ind++) {
+
+                                        var artgrname = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].name;
+
+                                        if (artgrname != null) {
+
+                                            if (artgrname.search(Suche) >= 0) {
+
+                                                console.log(artgrname);
+
+                                                zahler++;
+
+                                                var prgrname = datahandler.data[index].name;
+                                                var subname = datahandler.data[index].subGroups[i].name;
+                                                var proname = datahandler.data[index].subGroups[i].products[ii].name;
+                                                var artgrname = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].name;
+
+
+
+                                                var divaa = document.createElement('div');
+                                                divaa.innerHTML = '<div><span style="color:#74cae0;">' + prgrname + '<b> > </b>' + subname + '<b> > </b>' + proname + '<b> > </b>' + artgrname + '</span></div>';
+                                                $('#artgr').append(divaa);
+
+                                                var argr_fk = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].argr_fk;
+                                                var sg_fk = datahandler.data[index].subGroups[i].sg_fk;
+                                                var gr = datahandler.data[index].gr_fk;
+                                                var pk = datahandler.data[index].subGroups[i].products[ii].pk;
+
+
+                                                var makeShowItemEventListener = function (element, sg_fk, pk, argr_fk) {
+                                                    return function () {
+                                                        var tmp = [element, sg_fk, pk, argr_fk];
+                                                        datahandler.nextid = tmp;
+                                                        $.mobile.pageContainer.pagecontainer("change", "#ArtikelgruppenArtikel", { test: "Hello World!" });
+                                                    };
+                                                }
+                                                divaa.onclick = makeShowItemEventListener(gr, sg_fk, pk, argr_fk);
+
+
+
+                                            } else {
+                                                //console.log('keine artikelgruppe');
+
+                                            }
+
+                                        } else {
+
+                                            //console.log('name null');
+                                        }
+
+                                    }
+
+                                } else {
+
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                    // $('#zahler').html('');
+                    var x = zahler;
+                    $('#zahler').html('');
+                    var div = document.createElement('div');
+                    div.innerHTML = '<div><span style="color: #1a4064;"><b>Es wurden ' + x + ' Ergebnisse gefunden!</b></span></div>';
+                    $('#zahler').append(div);
+
+                },
+                //----------------------------------------------------------------------- Artiklen durchsuchen--------------------------------------------------------------
+                artikelsuchen: function (Suche) {
+
+                    var zahler = 0;
+                    $.mobile.pageContainer.pagecontainer("change", "#Artikelsuche", { test: "Hello World!" });
+
+                    //console.log('Artikeln suchen');
+                    $('artikel').html('');
+
+                    for (var index = 0; index < datahandler.data.length; index++) {
+
+                        var sublange = datahandler.data[index].subGroups.length;
+
+                        for (var i = 0; i < sublange; i++) {
+
+                            var prolange = datahandler.data[index].subGroups[i].products.length;
+
+                            for (var ii = 0; ii < prolange; ii++) {
+
+                                var artgrp = datahandler.data[index].subGroups[i].products[ii].articlegroups;
+
+                                if (artgrp != null) {
+
+                                    var artgrplange = datahandler.data[index].subGroups[i].products[ii].articlegroups.length;
+
+                                    for (var ind = 0; ind < artgrplange; ind++) {
+
+                                        var artlange = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].articles.length;
+
+                                        for (var inde = 0; inde < artlange; inde++) {
+
+                                            var art_nr = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].articles[inde].artikel_nr;
+
+                                            if (art_nr.search(Suche) >= 0) {
+
+                                                //console.log(art_nr);
+                                                zahler++;
+                                                var div = document.createElement('div');
+                                                div.innerHTML = '<div><span style="color:#74cae0; margin-left: 1cm;">' + art_nr + '</span></div>';
+                                                $('#artikel').append(div);
+
+
+                                                var argr_fk = datahandler.data[index].subGroups[i].products[ii].articlegroups[ind].argr_fk;
+                                                var sg_fk = datahandler.data[index].subGroups[i].sg_fk;
+                                                var gr = datahandler.data[index].gr_fk;
+                                                var pk = datahandler.data[index].subGroups[i].products[ii].pk;
+
+
+                                                var makeShowItemEventListener = function (element, sg_fk, pk, argr_fk) {
+                                                    return function () {
+                                                        var tmp = [element, sg_fk, pk, argr_fk];
+                                                        datahandler.nextid = tmp;
+                                                        $.mobile.pageContainer.pagecontainer("change", "#ArtikelgruppenArtikel", { test: "Hello World!" });
+                                                    };
+                                                }
+                                                div.onclick = makeShowItemEventListener(gr, sg_fk, pk, argr_fk);
+
+
+                                            } else {
+                                                //console.log('keine artikeln vohanden')
+                                            }
+                                        }
+                                    }
+
+                                } else {
+
+                                    var artlange = datahandler.data[index].subGroups[i].products[ii].articles.length;
+
+                                    for (var inde = 0; inde < artlange; inde++) {
+
+                                        var art_nr = datahandler.data[index].subGroups[i].products[ii].articles[inde].artikel_nr;
+
+                                        if (art_nr.search(Suche) >= 0) {
+
+                                            console.log(art_nr);
+                                            zahler++;
+                                            var div = document.createElement('div');
+                                            div.innerHTML = '<div><span style="color:#74cae0; margin-left: 1cm;"><a>' + art_nr + '</a></span></div>';
+                                            $('#artikel').append(div);
+
+                                            //klick auf ergebnisse der artiklen
+                                            var sg_fk = datahandler.data[index].subGroups[i].sg_fk;
+                                            var gr = datahandler.data[index].gr_fk;
+                                            var pk = datahandler.data[index].subGroups[i].products[ii].pk;
+
+
+                                            var makeShowItemEventListener = function (element, sg_fk, pk) {
+                                                return function () {
+                                                    var tmp = [element, sg_fk, pk];
+                                                    datahandler.nextid = tmp;
+                                                    $.mobile.pageContainer.pagecontainer("change", "#Artikelgruppen", { test: "Hello World!" });
+                                                };
+                                            }
+                                            div.onclick = makeShowItemEventListener(gr, sg_fk, pk);
+
+
+
+                                        } else {
+
+                                            //console.log('keine Artikeln vorhanden');
+
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    var x = zahler;
+                    $('#x').html('');
+                    var div = document.createElement('div');
+                    div.innerHTML = '<div><span style="color: #1a4064;"><b>Es wurden ' + x + ' Ergebnisse gefunden!</b></span></div>';
+                    $('#x').append(div);
+
+                },
+
+
+            }
+
+                //--------------------------------------------Internetverbidnung wird geprüft-----------------------------------------------------------------------------------------------------------------
+
+
+function checkInternet(){
+
+			document.getElementById("icon").style.display="none";
+
+            var inet = navigator.online;
+            console.log(inet);
+
+            if (inet == false) {
+            
+
+                console.log('offline');
+                $(document).ready(function () {
+			
+                   datahandler.localStorage_ausgeben();
+
+               });
+
+            } else {
+
+                console.log('online');
+                $(document).ready(function () {
+                   datahandler.loaddata();
+  					
+
+                });
+
+            }
+
+        }
+    //-----------------------------------------page Aufruf----------------------------------------------------------------------------------------------------------------------------
+
+
+
+        $(document).on('pagebeforeshow', '#produktgruppen', function () {
+            datahandler.showProductGroups();
+        });
+        $(document).on('pagebeforeshow', '#subgruppen', function (event, data) {
+
+            datahandler.showSubgroups(datahandler.nextid);
+        });
+        $(document).on('pagebeforeshow', '#produkte', function (event, data) {
+            datahandler.showProducts(datahandler.nextid);
+        });
+        $(document).on('pagebeforeshow', '#Artikelgruppen', function (event, data) {
+            datahandler.showArtikelgruppen(datahandler.nextid);
+        });
+        $(document).on('pagebeforeshow', '#ArtikelgruppenArtikel', function (event, data) {
+            datahandler.showArtikelgruppenArtikel(datahandler.nextid);
+        });
+        $(document).on('pagebeforeshow', '#ArtikelohneArtikelgruppen', function (event, data) {
+            datahandler.showArtikelgruppen(datahandler.nextid);
+        });
+        $(document).on('pagebeforeshow', '#Mediacenter', function (event, data) {
+            datahandler.showMediacenter(datahandler.nextid);
+        });
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
+
+

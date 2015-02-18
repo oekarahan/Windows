@@ -1,0 +1,39 @@
+﻿@media only screen and (max-width: 480px){
+selector {
+   property: value;
+   property: value;
+   property: value;
+}
+selector 2 {
+   property: value;
+   property: value;
+   property: value;
+}
+}
+@media screen and (min-width: 481px) and (max-device-width: 
+          768px) {
+selector {
+   property: value;
+   property: value;
+   property: value;
+}
+selector 2 {
+   property: value;
+   property: value;
+   property: value;
+}
+}
+
+@media only screen and (min-width: 481px) 
+{
+selector {
+   property: value;
+   property: value;
+   property: value;
+}
+selector 2 {
+   property: value;
+   property: value;
+   property: value;
+}
+}
