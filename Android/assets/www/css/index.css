@@ -213,7 +213,6 @@
                 width:30px;
                 height:30px;
 
-
             }
 
 
@@ -829,10 +828,10 @@
 
 /********************************************************************************************************/
    
-  @media only screen and (min-device-width:200px) and (max-device-width:1300px)and (orientation:landscape){
-
-        /*Smartphones Querformat*/
-
+  @media only screen and (min-device-width:200px) and (max-device-width:1300px)and (orientation:landscape)
+  
+  /*Quer*/
+  
         body {
             background-image: url(start_smatphones.png);
             background-size: cover;
